@@ -1,0 +1,64 @@
+$colors: (
+  'orange': #F7802A,
+  'blue': #266FDE,
+  'green': #49D0B0,
+  'yellow': #F1A411,
+  'indigo': #8E8ABD,
+  'red': #EA686D,
+  'white': #FFFFFF,
+  'dark': #2F3E77,
+  'purple': #5057DD,
+  'pink': #FFECEE,
+  'cyan': #46536A,
+  'teal': #111824,
+  'gray': #EFF4FA,
+);
+
+$min-contrast-ratio: 2.5;
+$primary-colors: (
+  'primary': map-get($colors, blue),
+  'secondary': map-get($colors, orange),
+  'danger': map-get($colors, red),
+  'success': map-get($colors, green),
+  'warning': map-get($colors, yellow),
+  'info': map-get($colors, teal),
+);
+
+$body: (
+  'body-bg': map-get($colors, gray),
+  'body-color': map-get($colors, dark),
+  'link-color': map-get($colors, dark),
+  'card-border-color': rgba(white, 0.125),
+  'card-bg': rgba(white, 1),
+  'table-bg': map-get($colors, white),
+  'list-group-bg': rgba(white, 1),
+  'modal-content-bg': rgba(white, 1),
+  'jumbotron-bg': rgba(white, 0.05),
+);
+
+$font-sizes: (
+  '1': 3.75rem,
+  '2': 2.5rem,
+  '3': 2rem,
+  '4': 1.5rem,
+  '5': 1.125rem,
+  '6': 0.875rem,
+);
+
+$font: 'Inter', sans-serif;
+$font-numbers: 'Inter', sans-serif;
+
+$responsive: (
+ 'sm': 768px,
+ 'md': 1024px,
+ 'lg': 1280px,
+ 'xlg': 1440px
+);
+
+.fw-medium {
+  font-weight: 500;
+}
+
+.fw-extra-bold {
+  font-weight: 800;
+}

@@ -1,0 +1,95 @@
+<body>
+  <section>
+    <div class="wrapper">
+      <div class="container">
+        <h1>Explore o mundo dos
+          <span class="text-danger"> Pokemons </span>
+        </h1>
+        <p>Descubra todas as espécies de Pokémons</p>
+        <form class="input-group">
+          <input class="form-control"
+          id="search-pokemon"
+          name="search_pokemon"
+          type="text"
+          required
+          [(ngModel)]="searchTerm"
+          autocomplete="off"
+          placeholder="Pesquise por nomes de Pokémons.."
+          />
+          <button class="btn"
+          type="button"
+          (click)="searchPokemon()"
+          >
+            Buscar
+          </button>
+        </form>
+        <picture class="pokemon-group">
+          <img srcset="../../../assets/images/blastoise.svg" alt="blastoise">
+          <img srcset="../../../assets/images/bulbasaur.svg" alt="blastoise">
+          <img srcset="../../../assets/images/pikachu.svg" alt="blastoise">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <section class="pokedex-section">
+    <div class="wrapper">
+      <div class="pokedex-head">
+        <p>Pokédex</p>
+        <div class="pagination">
+          <button (click)="previousPage()" [disabled]="currentPage === 1">
+            <svg width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g filter="url(#filter0_d_3_607)">
+              <circle cx="31" cy="16" r="16" transform="rotate(-180 31 16)" fill="#EA686D"/>
+              </g>
+              <path d="M34.45 26L36 24.45L28.05 16.5L36 8.55L34.45 7L25 16.5L34.45 26Z" fill="white"/>
+              <defs>
+              <filter id="filter0_d_3_607" x="0" y="0" width="62" height="62" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+              <feOffset dy="15"/>
+              <feGaussianBlur stdDeviation="7.5"/>
+              <feComposite in2="hardAlpha" operator="out"/>
+              <feColorMatrix type="matrix" values="0 0 0 0 0.917647 0 0 0 0 0.407843 0 0 0 0 0.427451 0 0 0 0.1 0"/>
+              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3_607"/>
+              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3_607" result="shape"/>
+              </filter>
+              </defs>
+            </svg>
+
+          </button>
+          <button (click)="nextPage()" [disabled]="currentPage * pageSize >= totalPokemons">
+            <svg width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g filter="url(#filter0_d_3_604)">
+              <circle cx="31" cy="16" r="16" fill="#EA686D"/>
+              </g>
+              <path d="M27.55 6L26 7.55L33.95 15.5L26 23.45L27.55 25L37 15.5L27.55 6Z" fill="white"/>
+              <defs>
+              <filter id="filter0_d_3_604" x="0" y="0" width="62" height="62" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+              <feOffset dy="15"/>
+              <feGaussianBlur stdDeviation="7.5"/>
+              <feComposite in2="hardAlpha" operator="out"/>
+              <feColorMatrix type="matrix" values="0 0 0 0 0.917647 0 0 0 0 0.407843 0 0 0 0 0.427451 0 0 0 0.1 0"/>
+              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3_604"/>
+              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3_604" result="shape"/>
+              </filter>
+              </defs>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="pokedex">
+        <div class="pokemon-card" *ngFor="let pokemon of displayedPokemons">
+          <div class="pokemon-details">
+            <img [src]="pokemon.sprites.other['official-artwork'].front_default" [alt]="pokemon.name" class="pokemon-image">
+            <h3 class="pokemon-name">{{ pokemon.name }}</h3>
+            <p>Altura: {{ pokemon.height | metrics:'height' }}</p>
+            <p>Peso: {{ pokemon.weight | metrics:'weight' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
