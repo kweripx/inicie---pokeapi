@@ -30,6 +30,7 @@
           />
           <button class="btn"
           type="button"
+          [disabled]="!searchTerm"
           (click)="searchPokemon()"
           >
             Buscar
@@ -100,13 +101,15 @@
               <small class="pokemon-code"> #{{ pokemon.id }}</small>
             </span>
             <img [src]="pokemon.sprites.other['official-artwork'].front_default" [alt]="pokemon.name" class="pokemon-image">
-            <span class="pokemon-stats">
-              <small class="bold">Altura: </small>
-              <small>{{ pokemon.height | metrics:'height' }}</small>
-              <small class="bold">Peso: </small>
-              <small>{{ pokemon.weight | metrics:'weight' }}</small>
-            </span>
           </div>
+          <span class="pokemon-stats">
+            <small class="bold">Altura: </small>
+            <small>{{ pokemon.height | metrics:'height' }}</small>
+          </span>
+          <span class="pokemon-stats">
+            <small class="bold">Peso: </small>
+            <small>{{ pokemon.weight | metrics:'weight' }}</small>
+          </span>
         </div>
       </div>
     </div>
