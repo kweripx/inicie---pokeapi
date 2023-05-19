@@ -6,10 +6,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class MetricsPipe implements PipeTransform {
   transform(value: number, metric: string): string {
     if (metric === 'height') {
-      const heightInMeters = value / 10; // Assuming the API provides height in decimeters
-      return `${heightInMeters} m`;
+      const heightInCentimeters  = (value * 10).toFixed(0);
+      const formattedHeight = (Number(heightInCentimeters) / 100).toFixed(2).replace('.', ',');
+      return `${formattedHeight} cm`;
     } else if (metric === 'weight') {
-      const weightInKilograms = value / 10; // Assuming the API provides weight in hectograms
+      const weightInKilograms = value / 10;
       return `${weightInKilograms} kg`;
     } else {
       return '';

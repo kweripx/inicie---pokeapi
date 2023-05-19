@@ -1,10 +1,13 @@
 @import "../../../styles/variables";
 
 body {
-  background: linear-gradient(180deg, #EFF4FA 0%, rgba(239, 244, 250, 0) 102.84%);
+  color: #2f3e77;
+  background-color: #EFF4FA;
+  font-family: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";;
+  margin: 0;
 }
 .wrapper {
-  max-width: 1200px;
+  max-width: 1310px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 16px;
@@ -14,7 +17,14 @@ body {
 .container {
   max-width: 100%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 40px;
+  margin-bottom: 35px;
+
+  .logo {
+    svg {
+      margin-bottom: -80px;
+    }
+  }
 
   h1 {
     width: 450px;
@@ -72,8 +82,13 @@ body {
 
   .pokemon-group {
     position: absolute;
-    top: 6%;
+    top: 16%;
     left: 52%;
+
+    img:nth-child(2) {
+      position: relative;
+      top: 35px;
+    }
   }
 }
 
@@ -104,17 +119,24 @@ body {
   .pokedex {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
   }
 
   .pokemon-card {
-    background-color: #f5f5f5;
-    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+    background: rgba(white, 1);
+    border: rgba(white, 0.125);
     padding: 10px;
     margin: 10px;
     cursor: pointer;
     text-align: center;
-    width: 200px;
+    width: 222px;
+    height: 271px;
+    border-radius: 1.25rem;
   }
 
   .pokemon-image {
@@ -124,12 +146,50 @@ body {
     margin: 0 auto;
   }
 
-  .pokemon-name {
-    font-weight: bold;
+  .pokemon-details {
+    color: #233674;
     text-transform: capitalize;
+    text-align: initial;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .pokemon-stats {
+      display: flex;
+      flex-direction: column;
+      .bold {
+        font-weight: 700;
+      }
+    }
+
+    .pokemon-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 200px;
+
+      .pokemon-name {
+        height: 30px;
+        font-family: 'Nunito Bold, Inter';
+        src: font-url('../../../assets/fonts/Nunito-Regular.ttf');
+        font-style: normal;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 30px;
+
+        .pokemon-code {
+          font-family: 'Nunito Regular, Inter';
+          src: font-url('../../../assets/fonts/Nunito-Regular.ttf');
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 22px;
+          margin-left: 53px;
+        }
+      }
+    }
   }
 }
-
 
 .selected-pokemon {
   margin-top: 20px;
