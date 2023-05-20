@@ -176,7 +176,7 @@ body {
           }
 
           p {
-            width: 101%;
+            width: 101% !important;
             height: auto;
             font-size: 16px;
             line-height: 1.5;
@@ -239,7 +239,7 @@ body {
           }
 
           p {
-            width: 100%;
+            width: 100% !important;
             height: auto;
             font-size: 16px;
             line-height: 1.5;
@@ -289,13 +289,10 @@ body {
     }
 
     @media screen and (max-width: 1024px) {
-      .container {
-
-        .content-container {
-          .content {
-            p {
-              width: 510px !important;
-            }
+      .content-container {
+        .content {
+          p {
+            width: 510px;
           }
         }
       }
@@ -327,20 +324,10 @@ body {
       }
     }
 
-    @media screen and (max-width: 1100px) {
-      p {
-        left: 14%;
-      }
-    }
-
     @media screen and (max-width: 1240px) {
       p {
         position: relative;
-        left: 4%;
-      }
-
-      .pagination {
-        margin-right: 40px;
+        left: 2%;
       }
     }
 
@@ -445,4 +432,3 @@ body {
 .pagination button {
   margin: 5px;
 }
-

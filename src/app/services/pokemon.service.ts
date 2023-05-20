@@ -1,4 +1,3 @@
-import { Pokemon } from './../models/pokemon.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { forkJoin } from 'rxjs';
@@ -10,7 +9,6 @@ import { mergeMap } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class PokemonService{
-  public pokemons: Pokemon[] = [];
 
   private baseUrl = 'https://pokeapi.co/api/v2';
 
