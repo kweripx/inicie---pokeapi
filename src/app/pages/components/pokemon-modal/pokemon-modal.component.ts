@@ -10,13 +10,11 @@ import { ChartsComponent } from '../../charts/charts.component';
 })
 export class PokemonModalComponent implements OnInit, AfterViewInit  {
   @Input() description: string;
-  @Input() stats: any[];
   @ViewChild(ChartsComponent) chartsComponent!: ChartsComponent;
 
   constructor(public dialogRef: MatDialogRef<PokemonModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
       this.description = data.description;
-      this.stats = this.data.stats;
     }
 
   ngOnInit() {

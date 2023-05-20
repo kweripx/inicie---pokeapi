@@ -51,8 +51,8 @@ export class HomeComponent implements OnInit {
 
   async openModal(pokemon: any) {
     const dialogRef = this.dialog.open(PokemonModalComponent, {
-      width: '320px',
-      height: '937px',
+      width: '740px',
+      height: '670px',
       data: {
         pokemon: pokemon,
         type: pokemon.types.map((t: { type: { name: string } }) => t.type.name),

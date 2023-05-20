@@ -1,66 +1,65 @@
-<section class="section-head">
-  <div class="modal-container">
-    <div class="modal-title">
-      <h1>{{ data.pokemon.name }}</h1>
-    </div>
-    <div class="infos-container">
-      <div class="modal-infos">
-        <span>Cod: </span>
-        <span>#{{data.pokemon.id}}</span>
+<aside class="main-container">
+  <section class="section-head">
+    <div class="modal-container">
+      <div class="modal-title">
+        <h1>{{ data.pokemon.name }}</h1>
       </div>
-      <div class="modal-infos">
-        <span>Tipo: </span>
-        <span>{{data.type[0]}}</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section-image">
-  <div class="image-container">
-    <div class="content">
-      <picture>
-        <img [src]="data.pokemon.sprites.other['official-artwork'].front_default" alt="">
-      </picture>
-    </div>
-  </div>
-</section>
-
-<article class="status">
-  <div class="status-container">
-    <div class="status-content">
-      <app-charts [stats]="data.stats"></app-charts>
-    </div>
-  </div>
-</article>
-
-<article class="section-description">
-  <div class="description-container">
-    <div class="description-content" >
-      <article>
-        <p>Descrição</p>
-        <small>{{description}}</small>
-      </article>
-    </div>
-  </div>
-</article>
-
-<article class="section-main">
-  <div class="content-container">
-    <div class="modal-content">
-      <p>Informações</p>
-      <div>
-        <span class="bold"> Altura: </span>
-        <span> {{data.pokemon.height}}</span>
-      </div>
-
-      <div>
-        <span class="bold"> Peso: </span>
-        <span> {{ data.pokemon.weight }}</span>
+      <div class="infos-container">
+        <div class="modal-infos">
+          <span>Cod: </span>
+          <span>#{{data.pokemon.id}}</span>
+        </div>
+        <div class="modal-infos">
+          <span>Tipo: </span>
+          <span>{{data.type[0]}}</span>
+        </div>
       </div>
     </div>
-  </div>
-</article>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
-</div>
+  </section>
+
+  <section class="section-image">
+    <div class="image-container">
+      <div class="content">
+        <picture>
+          <img [src]="data.pokemon.sprites.other['official-artwork'].front_default" alt="">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <article class="status">
+    <div class="status-container">
+      <div class="status-content">
+        <app-charts [stats]="data.stats"></app-charts>
+      </div>
+    </div>
+  </article>
+
+  <article class="section-main">
+    <div class="content-container">
+      <div class="modal-content">
+        <p>Informações</p>
+        <div class="modal-info">
+          <span class="bold"> Altura: </span>
+          <span class="bold"> {{data.pokemon.height | metrics:'height'}}</span>
+        </div>
+
+        <div class="modal-info">
+          <span class="bold"> Peso: </span>
+          <span class="bold"> {{ data.pokemon.weight | metrics:'weight'}}</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="section-description">
+    <div class="description-container">
+      <div class="description-content" >
+        <article>
+          <p>Descrição</p>
+          <small>{{description}}</small>
+        </article>
+      </div>
+    </div>
+  </article>
+</aside>
