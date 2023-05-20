@@ -1,15 +1,18 @@
-import { Component, OnInit, ViewChild  } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ElementRef  } from '@angular/core';
 import { PokemonService } from '../../../services/pokemon.service';
 import { MatDialog } from '@angular/material/dialog';
 import { PokemonModalComponent } from '../pokemon-modal/pokemon-modal.component';
 import { ChartsComponent} from '../../charts/charts.component';
+import SwiperCore, { Autoplay, Grid, Navigation } from 'swiper';
+
+SwiperCore.use([Autoplay, Navigation, Grid]);
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements AfterViewInit {
   pokemons: any[] = [];
   descriptions: any[] = [];
   selectedPokemon: any = null;
@@ -19,14 +22,50 @@ export class HomeComponent implements OnInit {
   pageSize = 10;
   totalPokemons = 0;
   @ViewChild(ChartsComponent, { static: false }) chartsComponent!: ChartsComponent;
+  @ViewChild('swiperContainer', { static: false }) swiperContainer?: ElementRef;
+  swiper!: SwiperCore;
+  numSlides = 5;
 
   constructor(
     private pokeapiService: PokemonService,
     private dialog: MatDialog
   ) {}
 
-  ngOnInit() {
+  ngAfterViewInit(): void {
     this.fetchPokemons();
+
+    if (this.swiperContainer) {
+      this.swiper = new SwiperCore(this.swiperContainer.nativeElement, {
+        slidesPerView: 1,
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10
+          },
+          480: {
+            slidesPerView: 3,
+            spaceBetween: 10
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 10
+          },
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 10
+          }
+        },
+        spaceBetween: 10,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      });
+    }
   }
 
   async fetchPokemons() {

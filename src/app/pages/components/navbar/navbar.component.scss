@@ -1,0 +1,23 @@
+.header {
+  padding: 1.5rem;
+  background-color: #eff4fa;
+  height: 0px;
+
+  .container {
+    padding: 0;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+
+    a {
+      color: #2f3e77;
+      text-decoration: underline;
+
+      picture {
+        svg {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}

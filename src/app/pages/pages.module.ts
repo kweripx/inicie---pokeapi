@@ -8,6 +8,7 @@ import { MetricsPipe } from '../pipes/metrics.pipe';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
+import { NavbarComponent} from './components/navbar/navbar.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     HomeComponent,
     PokemonModalComponent,
     ChartsComponent,
+    NavbarComponent,
     MetricsPipe,
   ]
 })
