@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonService } from '../../services/pokemon.service';
+import { PokemonService } from '../../../services/pokemon.service';
+
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,7 @@ export class HomeComponent implements OnInit {
   currentPage = 1;
   pageSize = 10;
   totalPokemons = 0;
+  selectedPokemonId: string | null = null;
 
   constructor(private pokeapiService: PokemonService) {}
 
@@ -65,5 +67,9 @@ export class HomeComponent implements OnInit {
       const startIndex = (this.currentPage - 1) * this.pageSize;
       this.displayedPokemons = this.pokemons.slice(startIndex, startIndex + this.pageSize);
     }
+  }
+
+  openSidebar(pokemonId: string): void {
+    this.selectedPokemonId = pokemonId;
   }
 }

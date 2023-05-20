@@ -1,8 +1,6 @@
 import { Pokemon } from './../models/pokemon.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { from } from 'rxjs';
-import { map, mergeMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',

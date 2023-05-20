@@ -1,4 +1,4 @@
-@import "../../../styles/variables";
+
 
 body {
   color: #2f3e77;
@@ -179,7 +179,7 @@ body {
       .pokemon-name {
         height: 30px;
         font-family: 'Nunito Bold', 'Inter';
-        src: font-url('../../../assets/fonts/Nunito-Regular.ttf');
+        src: font-url('../../../../assets/fonts/Nunito-Regular.ttf');
         font-style: normal;
         font-weight: 700;
         font-size: 22px;
@@ -187,7 +187,7 @@ body {
 
         .pokemon-code {
           font-family: 'Nunito Regular', 'Inter';
-          src: font-url('../../../assets/fonts/Nunito-Regular.ttf');
+          src: font-url('../../../../assets/fonts/Nunito-Regular.ttf');
           font-style: normal;
           font-weight: 400;
           font-size: 16px;
