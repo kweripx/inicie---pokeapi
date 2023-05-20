@@ -39,16 +39,6 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  async fetchDescriptions() {
-    try {
-      await this.pokeapiService.getDescriptions().subscribe((response) => {
-        this.descriptions = response;
-      })
-    } catch (error) {
-      console.error('Error fetching descriptions:', error);
-     }
-  }
-
   async selectPokemon(url: string) {
     try {
       this.selectedPokemon = await this.pokeapiService.getPokemonDetails(url);
@@ -67,6 +57,16 @@ export class HomeComponent implements OnInit {
         stats: pokemon.stats,
       },
     });
+
+    this.pokeapiService.getPokemonDescription(pokemon.species.name).subscribe(
+      (description: string) => {
+        dialogRef.componentInstance.description = description;
+      },
+      (error) => {
+        console.error('Error fetching Pokémon description:', error);
+      }
+    );
+
     dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed');
     });

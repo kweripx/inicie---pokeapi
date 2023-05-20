@@ -24,12 +24,11 @@ export class PokemonService{
       );
   }
 
-  getDescriptions(): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/pokemon-species`)
-      .pipe(
-        map(response => response.flavor_text_entries[0].flavor_text),
-        mergeMap(entries => forkJoin(entries.map((entry: any) => this.getDescription(entry.url))))
-      );
+  getPokemonDescription(name: string): Observable<string> {
+    const url = `${this.baseUrl}/pokemon-species/${name}`;
+    return this.http.get<any>(url).pipe(
+      map((response) => response.flavor_text_entries[0].flavor_text)
+    );
   }
 
   getPokemon(url: string) {
