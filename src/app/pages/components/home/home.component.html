@@ -1,5 +1,5 @@
 <body>
-  <section>
+  <section class="pokedex-head">
     <div class="wrapper">
       <div class="container">
         <picture class="logo">
@@ -14,36 +14,38 @@
           </svg>
         </picture>
 
-        <div class="content">
-          <h1>Explore o mundo dos
-            <span class="text-danger"> Pokemons </span>
-          </h1>
-          <p>Descubra todas as espécies de Pokémons</p>
-          <form class="input-group">
-            <input class="form-control"
-            id="search-pokemon"
-            name="search_pokemon"
-            type="text"
-            required
-            [(ngModel)]="searchTerm"
-            autocomplete="off"
-            placeholder="Pesquise por nomes de Pokémons.."
-            />
-            <button class="btn"
-            type="button"
-            [disabled]="!searchTerm"
-            (click)="searchPokemon()"
-            >
-              Buscar
-            </button>
-          </form>
+        <div class="content-container">
+          <div class="content">
+            <h1>Explore o mundo dos
+              <span class="text-danger"> Pokemons </span>
+            </h1>
+            <p>Descubra todas as espécies de Pokémons</p>
+            <form class="input-group">
+              <input class="form-control"
+              id="search-pokemon"
+              name="search_pokemon"
+              type="text"
+              required
+              [(ngModel)]="searchTerm"
+              autocomplete="off"
+              placeholder="Pesquise por nomes de Pokémons.."
+              />
+              <button class="btn"
+              type="button"
+              [disabled]="!searchTerm"
+              (click)="searchPokemon()"
+              >
+                Buscar
+              </button>
+            </form>
+          </div>
         </div>
 
         <div class="group-container">
           <picture class="pokemon-group">
-            <img srcset="../../../assets/images/blastoise.svg" alt="blastoise">
-            <img srcset="../../../assets/images/bulbasaur.svg" alt="blastoise">
-            <img srcset="../../../assets/images/pikachu.svg" alt="blastoise">
+            <img srcset="../../../assets/images/togepi.png" alt="togepi">
+            <img srcset="../../../assets/images/pikachu.png" alt="pikachu">
+            <img srcset="../../../assets/images/bulbasaur.png" alt="bulbasaur">
           </picture>
         </div>
       </div>
