@@ -39,6 +39,64 @@
             line-height: 1.5;
             font-family: 'Nunito', 'Inter';
           }
+
+          .type {
+            border-radius: .25rem;
+            color: rgba(255, 255, 255, 1)!important;
+            padding-right: .5rem;
+            padding-left: .5rem;
+            font-size: .875rem;
+            text-transform: uppercase;
+          }
+
+          .fogo {
+            background-color: #f08030;
+
+          }
+
+          .grama {
+            background-color: #88d8b8;
+          }
+
+          .agua {
+            background-color: #6890f0;
+          }
+          .eletrico {
+            background-color: #f8d030;
+          }
+          .fada {
+            background-color: #EE99AC;
+          }
+          .inseto {
+            background-color: #a8b820;
+          }
+          .normal {
+            background-color: #a8a878;
+          }
+          .veneno {
+            background-color: #a040a0;
+          }
+          .terra {
+            background-color: #E0C068;
+          }
+          .gelo {
+            background-color: #98D8D8;
+          }
+          .pedra {
+            background-color: #B8A038;
+          }
+          .lutador {
+            background-color: #C03028;
+          }
+          .psychic {
+            background-color: #F85888;
+          }
+          .fantasma {
+            background-color: #705898;
+          }
+          .dragao {
+            background-color: #7038F8;
+          }
         }
       }
     }

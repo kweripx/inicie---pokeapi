@@ -10,8 +10,25 @@
           <span>#{{data.pokemon.id}}</span>
         </div>
         <div class="modal-infos">
-          <span>Tipo: </span>
-          <span>{{data.type[0]}}</span>
+          <span>Type: </span>
+          <span class="type" [ngClass]="{
+            'grama': data.type[0] === 'grass',
+            'fogo': data.type[0] === 'fire',
+            'agua': data.type[0] === 'water',
+            'eletrico': data.type[0] === 'electric',
+            'inseto': data.type[0] === 'bug',
+            'normal': data.type[0] === 'normal',
+            'veneno': data.type[0] === 'poison',
+            'terra': data.type[0] === 'ground',
+            'gelo': data.type[0] === 'ice',
+            'pedra':data.type[0] === 'rock',
+            'lutador': data.type[0] === 'fighting',
+            'fada': data.type[0] === 'fairy',
+            'psychic': data.type[0] === 'psychic',
+            'fantasma': data.type[0] === 'ghost',
+            'dragao': data.type[0] === 'dragon'
+          }"
+          >{{data.type[0]}}</span>
         </div>
       </div>
     </div>
