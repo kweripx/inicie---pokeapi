@@ -1,49 +1,66 @@
 <section class="section-head">
   <div class="modal-container">
     <div class="modal-title">
-      <h1 mat-dialog-title>{{ data.pokemon.name }}</h1>
+      <h1>{{ data.pokemon.name }}</h1>
     </div>
-    <span class="modal-infos">
-      <small>Cod: #{{data.pokemon.id}}</small>
-    </span>
-    <span class="modal-infos">
-      <small>{{data.type}}</small>
-    </span>
-  </div>
-</section>
-
-<section class="section-description">
-  <div class="description-container">
-    <div class="description-content" >
-      <article>
-        <p>{{description}}</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section-main">
-  <div class="content-container">
-    <div class="modal-content">
-      <h2>Informações</h2>
-      <span>
-        <small class="bold"> Altura: </small>
-        <small> {{data.pokemon.height}}</small>
-      </span>
-      <span>
-        <small class="bold"> Peso: </small>
-        <small> {{ data.pokemon.weight }}</small>
-      </span>
-      <div mat-dialog-content>
-        <p>HP: {{data.stats[0].base_stat}}</p>
-        <p>Defense: {{data.stats[2].base_stat}}</p>
-        <p>Speed: {{data.stats[5].base_stat}}</p>
-        <p>Attack: {{data.stats[1].base_stat}}</p>
-        <img [src]="data.pokemon.sprites.other['official-artwork'].front_default" alt="">
+    <div class="infos-container">
+      <div class="modal-infos">
+        <span>Cod: </span>
+        <span>#{{data.pokemon.id}}</span>
+      </div>
+      <div class="modal-infos">
+        <span>Tipo: </span>
+        <span>{{data.type[0]}}</span>
       </div>
     </div>
   </div>
 </section>
+
+<section class="section-image">
+  <div class="image-container">
+    <div class="content">
+      <picture>
+        <img [src]="data.pokemon.sprites.other['official-artwork'].front_default" alt="">
+      </picture>
+    </div>
+  </div>
+</section>
+
+<article class="status">
+  <div class="status-container">
+    <div class="status-content">
+      <app-charts [stats]="data.stats"></app-charts>
+    </div>
+  </div>
+</article>
+
+<article class="section-description">
+  <div class="description-container">
+    <div class="description-content" >
+      <article>
+        <p>Descrição</p>
+        <small>{{description}}</small>
+      </article>
+    </div>
+  </div>
+</article>
+
+<article class="section-main">
+  <div class="content-container">
+    <div class="modal-content">
+      <p>Informações</p>
+      <div>
+        <span class="bold"> Altura: </span>
+        <span> {{data.pokemon.height}}</span>
+      </div>
+
+      <div>
+        <span class="bold"> Peso: </span>
+        <span> {{ data.pokemon.weight }}</span>
+      </div>
+    </div>
+  </div>
+</article>
 <div mat-dialog-actions>
   <button mat-button mat-dialog-close>Close</button>
 </div>

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild  } from '@angular/core';
 import { PokemonService } from '../../../services/pokemon.service';
 import { MatDialog } from '@angular/material/dialog';
 import { PokemonModalComponent } from '../pokemon-modal/pokemon-modal.component';
+import { ChartsComponent} from '../../charts/charts.component';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +18,7 @@ export class HomeComponent implements OnInit {
   currentPage = 1;
   pageSize = 10;
   totalPokemons = 0;
+  @ViewChild(ChartsComponent, { static: false }) chartsComponent!: ChartsComponent;
 
   constructor(
     private pokeapiService: PokemonService,
@@ -49,8 +51,8 @@ export class HomeComponent implements OnInit {
 
   async openModal(pokemon: any) {
     const dialogRef = this.dialog.open(PokemonModalComponent, {
-      width: '1140px',
-      height: '520px',
+      width: '320px',
+      height: '937px',
       data: {
         pokemon: pokemon,
         type: pokemon.types.map((t: { type: { name: string } }) => t.type.name),
