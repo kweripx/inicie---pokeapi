@@ -100,7 +100,7 @@
               <p class="pokemon-name">{{ pokemon.name }}</p>
               <small class="pokemon-code"> #{{ pokemon.id }}</small>
             </span>
-            <img [src]="pokemon.sprites.other['official-artwork'].front_default" [alt]="pokemon.name" class="pokemon-image">
+            <img [src]="pokemon.sprites.other['official-artwork'].front_default" [alt]="pokemon.name" class="pokemon-image" (click)="openModal(pokemon)">
           </div>
           <span class="pokemon-stats">
             <small class="bold">Altura: </small>
