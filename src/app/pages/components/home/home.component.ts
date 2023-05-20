@@ -19,12 +19,11 @@ export class HomeComponent implements AfterViewInit {
   searchTerm = '';
   displayedPokemons: any[] = [];
   currentPage = 1;
-  pageSize = 10;
+  pageSize = 5;
   totalPokemons = 0;
   @ViewChild(ChartsComponent, { static: false }) chartsComponent!: ChartsComponent;
   @ViewChild('swiperContainer', { static: false }) swiperContainer?: ElementRef;
   swiper!: SwiperCore;
-  numSlides = 5;
 
   constructor(
     private pokeapiService: PokemonService,
@@ -42,9 +41,13 @@ export class HomeComponent implements AfterViewInit {
             slidesPerView: 1,
             spaceBetween: 10
           },
+          393: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
           480: {
-            slidesPerView: 3,
-            spaceBetween: 10
+            slidesPerView: 2,
+            spaceBetween: 5
           },
           768: {
             slidesPerView: 4,
