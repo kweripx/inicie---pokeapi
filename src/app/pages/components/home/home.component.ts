@@ -18,11 +18,12 @@ export class HomeComponent implements AfterViewInit {
   selectedPokemon: any = null;
   searchTerm = '';
   displayedPokemons: any[] = [];
+  mobileDisplayedPokemons: any[] = [];
   currentPage = 1;
   pageSize = 5;
   totalPokemons = 0;
   @ViewChild(ChartsComponent, { static: false }) chartsComponent!: ChartsComponent;
-  @ViewChild('swiperContainer', { static: false }) swiperContainer?: ElementRef;
+  @ViewChild('swiper-container', { static: false }) swiperContainer?: ElementRef;
   swiper!: SwiperCore;
 
   constructor(
@@ -35,38 +36,12 @@ export class HomeComponent implements AfterViewInit {
 
     if (this.swiperContainer) {
       this.swiper = new SwiperCore(this.swiperContainer.nativeElement, {
-        slidesPerView: 1,
-        breakpoints: {
-          320: {
-            slidesPerView: 1,
-            spaceBetween: 10
-          },
-          393: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-          480: {
-            slidesPerView: 2,
-            spaceBetween: 5
-          },
-          768: {
-            slidesPerView: 4,
-            spaceBetween: 10
-          },
-          1024: {
-            slidesPerView: 5,
-            spaceBetween: 10
-          }
-        },
-        spaceBetween: 10,
+        slidesPerView: 3,
+        spaceBetween: 0,
         autoplay: {
           delay: 3000,
           disableOnInteraction: false
         },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        }
       });
     }
   }

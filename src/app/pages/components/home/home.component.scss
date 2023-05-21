@@ -346,6 +346,23 @@ body {
     @media screen and (max-width: 1240px) {
       justify-content: center;
     }
+
+    .swiper {
+      overflow: scroll;
+    }
+
+    .swiper::-webkit-scrollbar {
+      width: 0.5rem;
+      background-color: transparent;
+    }
+
+    .swiper::-webkit-scrollbar-thumb {
+      background-color: transparent;
+    }
+
+    .swiper::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
   }
 
   .pokemon-card {
